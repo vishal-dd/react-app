@@ -1,0 +1,16 @@
+{
+    "title":"Apple iphone 13",
+    "price":23432,
+    "rating": {
+        "rate": 4.5,
+        "ratings": 12345
+    },
+    "offers":[
+        "bank offers 5% cashback on flipkart axis bank card T&C",
+        "bank offers 5% cashback on flipkart axis bank card T&C",
+        "bank offers 5% cashback on flipkart axis bank card T&C",
+        "bank offers 5% cashback on flipkart axis bank card T&C"
+
+    ],
+    "image":"iphone.png"
+}

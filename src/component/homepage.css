@@ -1,0 +1,212 @@
+/* src/components/ScreenshotSection.css */
+
+.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.screenshot-box {
+  background-color: #3c3576;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 24px;
+  gap: 24px;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 1;
+  min-width: 280px;
+}
+
+.icon-box {
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon1 {
+  background-color: #f7d9db;
+}
+.icon2 {
+  background-color: #f4e4b0;
+}
+.icon3 {
+  background-color: #b5b8fa;
+}
+
+.icon-svg {
+  width: 20px;
+  height: 20px;
+  stroke: #3c3576;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.supervision h1,
+.supervision h5 {
+  font-weight: bold;
+}
+
+.supervision form input {
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+}
+
+.supervision button {
+  background-color: #fddfe1;
+  border: none;
+  padding: 10px 0px;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.childdiv img {
+  height: 100px;
+  width: 100px;
+}
+
+.maindiv {
+  background-color: #f8f7fb;
+  position: relative;
+  min-height: 450px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.childdiv {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.childdiv img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  z-index: 30;
+}
+
+.ourlst {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.first {
+  margin-right: 0px;
+}
+
+.blog-section {
+  background-color: #fff;
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.blog-title {
+  font-size: 1rem;
+  color: #00003c;
+}
+
+.arrow-box {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.arrow-btn {
+  background-color: #fff;
+  border: 1px solid #fcdde1;
+  color: #00003c;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background-color: #fcdde1;
+}
+
+.carousel-btn {
+  background: #e0e0e0;
+  border: none;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.active-btn {
+  background-color: #4B3BF3;
+  color: white;
+}
+/* Optional - Contact button styling */
+.homebtn {
+  border-radius: 25px;
+  padding: 6px 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 991.98px) {
+  .item {
+    min-width: unset;
+    flex-basis: calc(50% - 20px);
+  }
+  .screenshot-box {
+    padding: 24px 20px;
+    gap: 20px;
+  }
+  .first {
+    margin-right: 0;
+  }
+  .supervision form input,
+  .supervision button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .screenshot-box {
+    flex-direction: column;
+    padding: 20px 15px;
+    gap: 15px;
+  }
+  .item {
+    max-width: 100%;
+    flex-basis: auto;
+    justify-content: flex-start;
+  }
+  .childdiv img {
+    width: 100%;
+    max-width: 240px;
+  }
+  .maindiv {
+    padding-bottom: 40px;
+  }
+}

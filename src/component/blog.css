@@ -1,0 +1,157 @@
+.article-section {
+  padding: 60px 20px;
+  background-color: #fafafa;
+}
+
+.heading {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 32px;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.article-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+.article-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.article-tags {
+  margin-bottom: 8px;
+}
+
+.tag {
+  background: #e0e0e0;
+  color: #333;
+  padding: 4px 8px;
+  margin-right: 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.article-title {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.article-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.read-more-link {
+  font-size: 14px;
+  color: #6200ee;
+  text-decoration: none;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .article-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heading h1 {
+    font-size: 28px;
+  }
+
+  .article-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .article-container {
+    grid-template-columns: 1fr;
+  }
+
+  .heading h1 {
+    font-size: 20px;
+  }
+
+  .article-image {
+    height: 150px;
+  }
+
+  .article-title {
+    font-size: 16px;
+  }
+
+  .article-description {
+    font-size: 13px;
+  }
+
+  .read-more-link {
+    font-size: 13px;
+  }
+}
+
+.article-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.article-card:hover .article-image {
+  transform: scale(1.05);
+}
+
+.article-image {
+  transition: transform 0.4s ease;
+}
+
+.article-title:hover {
+  color: #6200ee;
+  text-decoration: underline;
+}
+
+.article-card:hover {
+  border-color: #6200ee;
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <svg style="display: none;">
+        <symbol id="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+        </symbol>
+    </svg>
+    <style>
+        /* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* A common modern sans-serif font */
+    background-color: #000; /* Deep black background */
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px; /* More generous padding */
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll on some mobile layouts */
+}
+
+.container {
+    max-width: 1280px; /* Slightly wider container */
+    width: 100%;
+    margin: auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 80px; /* More space below header */
+}
+
+.header-title {
+    font-size: 3.8em; /* Larger title */
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em; /* Tighter letter spacing */
+}
+
+.header-subtitle {
+    font-size: 1.2em;
+    color: #bbb; /* Lighter grey for subtitle */
+    font-weight: 500;
+}
+
+/* Case Studies Grid */
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 0px; /* No gap for direct positioning */
+    position: relative; /* For absolute positioning of badges and lines */
+    min-height: 700px; /* Ensure enough space for floating elements */
+    align-items: start; /* Align grid items to the start */
+    padding-bottom: 250px; /* Space for the bottom floating elements */
+}
+
+.grid-item {
+    position: relative;
+    z-index: 2; /* Ensure cards are above connecting lines */
+}
+
+/* Individual Case Study Card */
+.case-study-card {
+    background-color: #1a1a1a; /* Darker background for cards */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* More pronounced shadow */
+    height: 480px; /* Specific height for card */
+    margin: 0 20px; /* Space from container edge */
+}
+
+.card-image-container {
+    height: 65%; /* Image takes more space */
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(80%); /* Black and white with slight darkening */
+    transform: scale(1.05); /* Slight zoom for image */
+    transition: transform 0.3s ease;
+}
+.card-image:hover {
+    transform: scale(1);
+}
+
+.card-content {
+    padding: 30px; /* More padding */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; /* For the card-link */
+}
+
+.card-title {
+    font-size: 1.9em; /* Larger title in card */
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.25;
+}
+
+.card-description {
+    font-size: 1.05em;
+    color: #a0a0a0; /* Slightly darker grey description */
+    margin-bottom: 30px; /* More space before link */
+}
+
+.card-link {
+    position: absolute;
+    bottom: 30px; /* Closer to bottom */
+    right: 30px; /* Closer to right */
+    width: 50px; /* Larger square */
+    height: 50px;
+    background-color: #ffa500; /* Main orange color */
+    border-radius: 10px; /* Slightly more rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.card-link:hover {
+    background-color: #ff8c00;
+    transform: translateY(-3px);
+}
+
+.arrow-icon {
+    width: 28px; /* Larger arrow */
+    height: 28px;
+    color: #fff;
+    stroke-width: 2.5; /* Thicker stroke */
+}
+
+/* Abstract Card Specifics */
+.card-abstract-bg {
+    background-color: #ffa500; /* Solid orange background */
+    height: 65%; /* Same height as image container */
+    position: relative; /* For badge overlay */
+}
+
+.badge-overlay {
+    background-color: #2b2b2b; /* Darker background for badge */
+    color: #fff;
+    padding: 12px 20px; /* Adjusted padding */
+    border-radius: 8px;
+    position: absolute;
+    bottom: -25px; /* Position slightly below */
+    right: 35px; /* Adjust from right */
+    font-weight: 500;
+    font-size: 0.95em;
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Floating Elements (Badges and Phone) */
+
+.badge-bottom-left {
+    background-color: #ffa500;
+    color: #fff;
+    padding: 25px 35px; /* Larger padding */
+    border-radius: 15px;
+    font-size: 1.3em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 320px; /* Explicit width */
+    bottom: -150px; /* Position below grid item */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+.badge-bottom-left .card-link {
+    position: static; /* Override absolute positioning */
+    margin-left: 20px;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.phone-mockup {
+    background-color: #1a1a1a; /* Dark background matching cards */
+    border-radius: 35px; /* Rounded phone corners */
+    padding: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7); /* Deep shadow */
+    width: 220px; /* Phone width */
+    height: 440px; /* Phone height */
+    position: absolute;
+    bottom: -200px; /* Position further below the right grid item */
+    right: 50px; /* Position from the right edge of its grid item */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+    overflow: hidden; /* For screen content */
+}
+
+.phone-display {
+    background-color: #000; /* Screen background */
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px; /* Padding inside screen */
+    box-sizing: border-box;
+    position: relative;
+}
+
+.phone-top-link {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 7px;
+}
+
+.phone-header {
+    width: 40px; /* Placeholder for user icon */
+    height: 40px;
+    background-color: #333; /* Placeholder for user icon circle */
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.phone-main-value {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.phone-graph {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 80px; /* Height for graph area */
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.graph-bar {
+    width: 20px;
+    background-color: #ffa500; /* Orange bars */
+    border-radius: 3px;
+}
+.bar1 { height: 60%; }
+.bar2 { height: 80%; background-color: #ff8c00; } /* Slightly different shade */
+.bar3 { height: 40%; }
+
+
+.phone-stats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 0.9em;
+    color: #aaa;
+    font-weight: 500;
+}
+.stat-item {
+    text-align: center;
+}
+
+/* Connecting Lines (using SVG - highly recommended for complex diagonals) */
+.connecting-lines-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Below cards */
+    pointer-events: none; /* Allows interaction with elements beneath */
+}
+
+/* Adjust SVG line coordinates based on final element positions */
+/* The example coordinates (x1, y1, x2, y2) are placeholders.
+   You would use browser dev tools to find the exact pixel coordinates
+   of the elements' centers/edges you want to connect and then set them here. */
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .header-title {
+        font-size: 3em;
+    }
+    .card-title {
+        font-size: 1.7em;
+    }
+    .case-studies-grid {
+        grid-template-columns: 1fr; /* Single column on tablets */
+        gap: 150px; /* More space when stacked */
+        padding-bottom: 100px; /* Adjust padding */
+    }
+    .case-study-card {
+        height: auto; /* Auto height on smaller screens */
+    }
+
+    .badge-bottom-left {
+        bottom: -100px; /* Adjust position for single column */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 350px;
+    }
+
+    .phone-mockup {
+        bottom: -150px; /* Adjust position for single column */
+        right: 50%;
+        transform: translateX(50%); /* Center it better */
+        width: 200px;
+        height: 400px;
+    }
+
+    /* Hide SVG lines on smaller screens or if they don't look right */
+    .connecting-lines-svg {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-title {
+        font-size: 2.2em;
+    }
+    .header-subtitle {
+        font-size: 1em;
+    }
+    .card-title {
+        font-size: 1.4em;
+    }
+    .card-content {
+        padding: 20px;
+    }
+    .card-link {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .arrow-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .badge-bottom-left {
+        padding: 15px 20px;
+        font-size: 1.1em;
+    }
+    .badge-bottom-left .card-link {
+        width: 35px;
+        height: 35px;
+    }
+    .phone-mockup {
+        width: 180px;
+        height: 360px;
+        padding: 10px;
+    }
+    .phone-main-value {
+        font-size: 1.7em;
+    }
+    .phone-top-link {
+        width: 30px;
+        height: 30px;
+    }
+}
+    </style>
+ </head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header-title">Case Studies</h1>
+            <p class="header-subtitle">from our experienced expert</p>
+        </header>
+
+        <div class="case-studies-grid">
+            <div class="grid-item card-left">
+                <div class="case-study-card">
+                    <div class="card-image-container">
+                        <img src="https://via.placeholder.com/600x400/333333/FFFFFF?text=Collaboration" alt="Team Collaboration" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Seamlessly Transitioning 74 Engineers Across Organizations</h2>
+                        <p class="card-description">Teaching introspection</p>
+                        <a href="#" class="card-link">
+                            <svg class="arrow-icon"><use xlink:href="#arrow-icon"></use></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="orange-badge badge-bottom-left">
+                    <span>Over $32M in 2022</span>
+                    <a href="#" class="card-link badge-link">
+                        <svg class="arrow-icon"><use xlink:href="#arrow-icon"></use></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid-item card-right">
+                <div class="case-study-card card-abstract">
+                    <div class="card-abstract-bg">
+                        <div class="badge-overlay">
+                            <span>Over 34 Experts</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Transforming Vendor Dependency Into In-House Excellence</h2>
+                        <p class="card-description">Teaching introspection</p>
+                        <a href="#" class="card-link">
+                            <svg class="arrow-icon"><use xlink:href="#arrow-icon"></use></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="phone-mockup">
+                    <div class="phone-display">
+                        <a href="#" class="card-link phone-top-link">
+                            <svg class="arrow-icon"><use xlink:href="#arrow-icon"></use></svg>
+                        </a>
+                        <div class="phone-header">
+                            </div>
+                        <div class="phone-main-value">$12,524</div>
+                        <div class="phone-graph">
+                            <div class="graph-bar bar1"></div>
+                            <div class="graph-bar bar2"></div>
+                            <div class="graph-bar bar3"></div>
+                        </div>
+                        <div class="phone-stats">
+                            <span class="stat-item">$829</span>
+                            <span class="stat-item">$5,909</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <svg class="connecting-lines-svg" width="100%" height="100%" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+                <line x1="300" y1="450" x2="300" y2="550" stroke="#ffa500" stroke-width="4" />
+                <line x1="850" y1="350" x2="650" y2="550" stroke="#ffa500" stroke-width="4" />
+            </svg>
+
+        </div>
+    </div>
+</body>
+</html>

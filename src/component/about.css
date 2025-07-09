@@ -1,0 +1,130 @@
+/* ================================
+   MAIN SECTION: About Us
+================================= */
+.about-wrapper {
+  background-color: #ffffff;
+  margin-bottom: -60px;       /* Enables overlap into next section */
+  position: relative;
+  z-index: 2;
+}
+
+.about-us-section {
+  background-color: #34205d;
+  color: white;
+  padding-top: 60px;
+}
+
+.content-box {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background-color: white;
+  color: #000; /* Ensure content text is black */
+}
+
+.who-we-are {
+  color: #555;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* ================================
+   SIDE STRIPS
+================================= */
+.bg-purple-light {
+  background-color: #34205d;
+  width: 20px;
+}
+
+.bg-purple-dark,
+.side-strip {
+  background-color: #3b2e75;
+  width: 25px;
+  min-height: 100%;
+}
+
+/* ================================
+   BUTTONS
+================================= */
+.read-more-btn {
+  background-color: white;
+  color: black;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.read-more-btn:hover {
+  background-color: #ddd;
+}
+
+.black-pill-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.black-pill-btn:hover {
+  background-color: #222;
+}
+
+/* ================================
+   CHOOSE ME SECTION
+================================= */
+.choose-me-wrapper {
+  background-color: #3b2e75;
+  position: relative;
+  z-index: 1;
+  padding-top: 100px; /* creates space for overlap */
+  padding-bottom: 60px;
+}
+
+.choose-me-section h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.choose-me-section p,
+.choose-me-section h4,
+.choose-me-wrapper h1,
+.choose-me-wrapper h4,
+.choose-me-wrapper p {
+  color: #f1f1f1;
+}
+
+.choose-me-section p.mx-auto {
+  max-width: 800px;
+}
+
+/* ================================
+   RESPONSIVE STYLES
+================================= */
+@media (max-width: 768px) {
+  .choose-me-section h1 {
+    font-size: 28px;
+  }
+
+  .choose-me-section h4 {
+    font-size: 18px;
+  }
+
+  .choose-me-section p {
+    font-size: 16px;
+  }
+
+  .about-us-section img {
+    margin-bottom: 20px;
+  }
+}
+
+.content-box svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: -1px; /* aligns wave perfectly */
+}

@@ -1,0 +1,35 @@
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #0d6efd; 
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+  text-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
+}
+
+.homebtn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.homebtn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(13, 110, 253, 0.3);
+}
