@@ -91,17 +91,6 @@
   clip-path: ellipse(75% 55% at 50% 50%);
 }
 
-.bg-green::before {
-  background-color: #d6f5d6;
-}
-
-.bg-blue::before {
-  background-color: #d6e6ff;
-}
-
-.bg-purple::before {
-  background-color: #eedbff;
-}
 
 /* Responsive */
 @media (max-width: 992px) {

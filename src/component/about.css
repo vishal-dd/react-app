@@ -1,64 +1,39 @@
 /* ================================
-   MAIN SECTION: About Us
+   ABOUT US SECTION
 ================================= */
-.about-wrapper {
-  background-color: #ffffff;
-  margin-bottom: -60px;       /* Enables overlap into next section */
+.about-us1 {
+    background-color: #3b2e75; 
+      margin-top: 109px;
   position: relative;
-  z-index: 2;
+  height: 351px; /* ✅ makes it responsive */
+}
+.contactbtn{
+  background-color: #fbb8b8;
 }
 
-.about-us-section {
-  background-color: #34205d;
-  color: white;
-  padding-top: 60px;
+.about-content {
+  position: relative;
+  margin: 0 auto;           /* ✅ Centers the box */
+  top: -150px;              /* ✅ Overlaps the blue background nicely */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 75%;           /* Matches your container width */
 }
 
-.content-box {
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  background-color: white;
-  color: #000; /* Ensure content text is black */
-}
-
-.who-we-are {
-  color: #555;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-/* ================================
-   SIDE STRIPS
-================================= */
-.bg-purple-light {
-  background-color: #34205d;
-  width: 20px;
-}
-
-.bg-purple-dark,
-.side-strip {
-  background-color: #3b2e75;
-  width: 25px;
-  min-height: 100%;
+.about-content img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 /* ================================
    BUTTONS
 ================================= */
-.read-more-btn {
-  background-color: white;
-  color: black;
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-weight: bold;
-}
-
-.read-more-btn:hover {
-  background-color: #ddd;
-}
-
 .black-pill-btn {
   background-color: #000;
   color: #fff;
@@ -80,7 +55,7 @@
   background-color: #3b2e75;
   position: relative;
   z-index: 1;
-  padding-top: 100px; /* creates space for overlap */
+  padding-top: 100px;
   padding-bottom: 60px;
 }
 
@@ -105,6 +80,19 @@
    RESPONSIVE STYLES
 ================================= */
 @media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;    /* ✅ stack text & image */
+    text-align: center;
+    top: -100px;
+    max-width: 90%;
+  }
+  .about-us1{
+    height: auto;
+  }
+  .about-content img {
+    margin-top: 20px;
+  }
+
   .choose-me-section h1 {
     font-size: 28px;
   }
@@ -116,15 +104,4 @@
   .choose-me-section p {
     font-size: 16px;
   }
-
-  .about-us-section img {
-    margin-bottom: 20px;
-  }
-}
-
-.content-box svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-bottom: -1px; /* aligns wave perfectly */
 }
