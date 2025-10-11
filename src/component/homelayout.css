@@ -33,3 +33,27 @@
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 8px 16px rgba(13, 110, 253, 0.3);
 }
+
+@media (max-width: 991.98px) {
+  /* On mobile, the nav links are centered. Let's adjust the underline to match. */
+  .nav-link::after {
+    /* Center the underline by positioning its left edge at 50%... */
+    left: 50%;
+    /* ...and then shifting it left by half of its own width. */
+    transform: translateX(-50%);
+  }
+
+  /* Make the active/hover underline shorter for a cleaner look on mobile */
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 50%; /* Adjust this percentage as you like */
+  }
+}
+
+@media (max-width:426px) {
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 20%;
+    margin-inline-start: 160px;
+} 
+}

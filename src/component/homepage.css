@@ -1,4 +1,4 @@
-/* src/components/ScreenshotSection.css */
+src/components/ScreenshotSection.css
 
 .py-5 {
   padding-top: 3rem !important;
@@ -9,7 +9,7 @@
   background-color: #3c3576;
   border-radius: 8px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 50px 24px;
   gap: 24px;
@@ -37,9 +37,11 @@
 .icon1 {
   background-color: #f7d9db;
 }
+
 .icon2 {
   background-color: #f4e4b0;
 }
+
 .icon3 {
   background-color: #b5b8fa;
 }
@@ -163,9 +165,10 @@
 }
 
 .active-btn {
-  background-color: #4B3BF3;
+  background-color: #4b3bf3;
   color: white;
 }
+
 /* Optional - Contact button styling */
 .homebtn {
   border-radius: 25px;
@@ -173,40 +176,137 @@
   font-weight: 600;
 }
 
+/* Fixed hero-visitors styling */
+.hero-visitors {
+  width: 180px;
+  height: 180px;
+  top: 60px ! important;
+  left: -50px !important;
+
+}
+
+.visitors-icon {
+  top: 20px !important;
+  right: -30px !important;
+  width: 90px;
+  max-width: 25%;
+  position: absolute;
+}
+
+.abc1 {
+  position: absolute;
+  top: 10%;
+  left: 79%;
+  width: 150px;
+}
+
+
+/* Responsive adjustments */
 @media (max-width: 991.98px) {
   .item {
     min-width: unset;
     flex-basis: calc(50% - 20px);
   }
-  .screenshot-box {
-    padding: 24px 20px;
-    gap: 20px;
-  }
+
+  
+
   .first {
     margin-right: 0;
   }
+
   .supervision form input,
   .supervision button {
     width: 100%;
   }
+ .abc1 {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  width: 150px;
+}
 }
 
 @media (max-width: 767.98px) {
-  .screenshot-box {
-    flex-direction: column;
-    padding: 20px 15px;
-    gap: 15px;
-  }
+ .abc1 {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  width: 150px;
+}
+
+
   .item {
     max-width: 100%;
     flex-basis: auto;
     justify-content: flex-start;
   }
+
   .childdiv img {
     width: 100%;
     max-width: 240px;
   }
+
   .maindiv {
     padding-bottom: 40px;
   }
+}
+
+@media (max-width: 426px) {
+
+  .abc1 {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  width: 150px;
+}
+  .hero-visitors {
+    left: 0px !important;
+  }
+  .visitors-icon {
+  top: 20px !important;
+  right: 0px !important;
+  width: 90px;
+  max-width: 25%;
+  position: absolute;
+
+}
+}
+/* Define the new fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start 20px below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at its original position */
+  }
+}
+
+/* --- Animation Setup --- */
+
+/* This is the container for our spans */
+.animated-headline {
+  overflow: hidden; /* Hides the text before it animates in */
+}
+
+/* Style the spans and prepare them for animation */
+.animated-headline span {
+  display: block; /* Makes each span take a new line */
+  opacity: 0; /* Initially hidden */
+  animation-name: fadeUp;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; /* Keeps the 'to' state after animation ends */
+}
+
+/* Stagger the animation with delays */
+.animated-headline span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.animated-headline span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.animated-headline span:nth-child(3) {
+  animation-delay: 0.6s;
 }

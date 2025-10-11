@@ -5,73 +5,120 @@ import { FaqAccordion } from './FaqAccordion';
 import { Card } from './cards';
 
 export function Homepage() {
+
   return (
     <div>
-      <section className="py-5 bg-white">
-        <div className="container">
-          <div className="row align-items-center">
+      
+       <section className="py-5 bg-white">
+      <div className="container">
+        <div className="row align-items-center justify-content-between">
+          
+          {/* Left Content */}
+          {/* <div className="col-12 col-md-10 col-lg-6 mb-5 mb-lg-0 text-center text-lg-start">
+            <h1 className="fw-bold display-5 text-dark">
+              Transform Your Business <br />
+              with Innovative <br />
+              Software Consulting
+            </h1>
+            <p className="text-secondary mt-3">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard dummy text ever since the...
+            </p>
 
-            <div className="col-lg-6 mb-4 mb-lg-0">
-              <h1 className="fw-bold display-5 text-dark">
-                Transform Your Business <br />
-                with Innovative <br />
-                Software Consulting
-              </h1>
-              <p className="text-secondary mt-3">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the...
-              </p>
+            <div className="d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center gap-3 mt-4">
+              <button
+                className="btn px-4 py-2 fw-semibold"
+                style={{ backgroundColor: "#fddfe1" }}
+              >
+                Contact Now
+              </button>
 
-              <div className="d-flex align-items-center gap-3 mt-4 flex-wrap">
-                <button className="btn btn-light px-4 py-2" style={{ backgroundColor: '#fddfe1', fontWeight: '600' }}>
-                  Contact Now
-                </button>
-
-                <button className="btn btn-outline-secondary d-flex align-items-center gap-2 fw-semibold">
-                  <FaArrowRight /> Book a Demo Today
-                </button>
-              </div>
-
-              <div className="d-flex align-items-center gap-2 mt-4">
-                <div className="bg-light px-3 py-2 rounded" style={{ backgroundColor: '#fddfe1' }}>
-                  <FaStar className="text-dark" />
-                </div>
-                <small className="text-secondary fw-medium">Rated 4.9 out of 1200 reviews</small>
-              </div>
+              <button className="btn btn-outline-secondary d-flex align-items-center gap-2 fw-semibold">
+                <FaArrowRight /> Book a Demo Today
+              </button>
             </div>
 
-            <div className="col-lg-6">
+            <div className="d-flex justify-content-center justify-content-lg-start align-items-center gap-2 mt-4">
               <div
-                className="position-relative rounded p-4 h-100 d-flex align-items-center justify-content-center"
-                style={{ backgroundColor: '#fddfe1', minHeight: '300px' }}
+                className="px-3 py-2 rounded"
+                style={{ backgroundColor: "#fddfe1" }}
               >
-                <div className="bg-white shadow rounded p-3" style={{ width: '200px' }}>
-                  <p className="mb-1 fw-semibold text-muted small">New visitors</p>
-                  <h5 className="fw-bold">84% <small className="text-success">+0.4%</small></h5>
-
-                  <div className="d-flex justify-content-between mt-3">
-                    {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((d, i) => (
-                      <div key={i} className="text-center">
-                        <div
-                          style={{
-                            width: '10px',
-                            height: `${20 + Math.random() * 40}px`,
-                            backgroundColor: i === 4 ? '#343a40' : '#e0bfc2',
-                            margin: '0 auto',
-                            borderRadius: '4px'
-                          }}
-                        ></div>
-                        <small className="text-muted">{d}</small>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
+                <FaStar className="text-dark" />
               </div>
+              <small className="text-secondary fw-medium">
+                Rated 4.9 out of 1200 reviews
+              </small>
+            </div>
+          </div> */}
+  <div className="col-12 col-md-10 col-lg-6 mb-5 mb-lg-0 text-center text-lg-start">
+  {/* Add a class to the H1 to act as our animation container */}
+  <h1 className="fw-bold display-5 text-dark animated-headline">
+    {/* Wrap each line in a span */}
+    <span>Transform Your Business</span>
+    <span>with Innovative</span>
+    <span>Software Consulting</span>
+  </h1>
+
+  <p className="text-secondary mt-3">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the...
+  </p>
+
+  {/* ... (rest of your code is the same) ... */}
+</div>
+
+          {/* Right Content */}
+          <div className="col-12 col-md-8 col-lg-5 mx-auto position-relative">
+            <div
+              className="position-relative rounded w-100 mx-auto"
+              style={{
+                backgroundColor: "#fddfe1",
+                minHeight: "350px",
+                borderRadius: "8px",
+              }}
+            >
+              {/* Small white stats card */}
+              <div
+                className="bg-white shadow rounded p-3 position-absolute hero-visitors"
+               
+              >
+                <p className="mb-1 fw-semibold text-muted small">New visitors</p>
+                <h5 className="fw-bold">
+                  84% <small className="text-success">+0.4%</small>
+                </h5>
+
+                <div className="d-flex justify-content-between mt-3">
+                  {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (
+                    <div key={i} className="text-center">
+                      <div
+                        style={{
+                          width: "10px",
+                          height: `${20 + Math.random() * 40}px`,
+                          backgroundColor: i === 4 ? "#343a40" : "#e0bfc2",
+                          margin: "0 auto",
+                          borderRadius: "4px",
+                        }}
+                      ></div>
+                      <small className="text-muted">{d}</small>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Arrow graphic */}
+              <img
+                src="./img.png"
+                alt="Arrow Graphic"
+                className="visitors-icon"
+
+              />
             </div>
           </div>
+
         </div>
-      </section>
+      </div>
+    </section>
+
       <section className="py-5">
         <div className="container">
           <div className="row justify-content-center">
@@ -119,18 +166,17 @@ export function Homepage() {
                 </div>
               </div>
 
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/10886/10886729.png"
+              <img 
+                src="./new visitor icons.png"
                 alt="star"
                 style={{ position: 'absolute', top: -20, left: 20, width: 40 }}
               />
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/10886/10886744.png"
+              <img  className='abc1'
+                src="./success.png"
                 alt="swirl"
-                style={{ position: 'absolute', top: '50%', left: '30%', width: 60, transform: 'translateY(-50%)' }}
               />
             </div>
-
+                  
             <div className="col-md-6">
               <h2 className="fw-bold mb-3">Success Stories That Speak<br />for Themselves.</h2>
               <p className="text-muted">
@@ -162,7 +208,7 @@ export function Homepage() {
         </div>
       </section>
 
-      <section className="py-5">
+      <section>
         <div className="container">
           <div className="screenshot-box" role="region" aria-label="Business value propositions">
             <div className="item">
@@ -216,11 +262,12 @@ export function Homepage() {
                 <div className="mb-3">
                   <input type="email" className="form-control" placeholder="Email Address" />
                 </div>
-                <button className="btn mt-3 w-75">Contact Now</button>
+                <button className="btn mt-3 ms-5 mb-4 w-75">Contact Now</button>
               </form>
             </div>
             <div className="col-md-6">
               <div className="maindiv">
+                <img src="./success.png" className='abc1'></img>
                 <div className="childdiv">
                   <img src="./chart.png" alt="Chart" />
                 </div>
@@ -335,71 +382,40 @@ export function Homepage() {
     </div>
   </div>
 </section>
-<section className="py-5" style={{ backgroundColor: "#3e2f86" }}>
-  <div className="container">
-    <div className="row text-white text-center justify-content-center">
-      {/* Card 1 */}
-      <div className="col-md-4 mb-4 mb-md-0 d-flex align-items-center justify-content-center">
-        <div className="d-flex align-items-center">
-          <div
-            className="me-3"
-            style={{
-              backgroundColor: "#fbdada",
-              padding: "12px",
-              borderRadius: "8px",
-            }}
-          >
-            <i className="bi bi-check-square" style={{ fontSize: "1.5rem", color: "#000" }}></i>
-          </div>
-          <div className="text-start">
-            <div><strong>Real Solutions,</strong></div>
-            <div>Real Impact.</div>
-          </div>
-        </div>
-      </div>
 
-      {/* Card 2 */}
-      <div className="col-md-4 mb-4 mb-md-0 d-flex align-items-center justify-content-center">
-        <div className="d-flex align-items-center">
-          <div
-            className="me-3"
-            style={{
-              backgroundColor: "#ffe3a3",
-              padding: "12px",
-              borderRadius: "8px",
-            }}
-          >
-            <i className="bi bi-check-square" style={{ fontSize: "1.5rem", color: "#000" }}></i>
-          </div>
-          <div className="text-start">
-            <div><strong>Efficiency Unlocked,</strong></div>
-            <div>Growth Delivered.</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Card 3 */}
-      <div className="col-md-4 d-flex align-items-center justify-content-center">
-        <div className="d-flex align-items-center">
-          <div
-            className="me-3"
-            style={{
-              backgroundColor: "#d2d3fc",
-              padding: "12px",
-              borderRadius: "8px",
-            }}
-          >
-            <i className="bi bi-check-square" style={{ fontSize: "1.5rem", color: "#000" }}></i>
-          </div>
-          <div className="text-start">
-            <div><strong>Transforming Challenges</strong></div>
-            <div>into Opportunities.</div>
+<section>
+        <div className="container">
+          <div className="screenshot-box" role="region" aria-label="Business value propositions">
+            <div className="item">
+              <div className="icon-box icon1" aria-hidden="true">
+                <svg className="icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div className="text">Real Solutions,<br />Real Impact.</div>
+            </div>
+            <div className="item">
+              <div className="icon-box icon2" aria-hidden="true">
+                <svg className="icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10" strokeWidth="2"></circle> {/* stroke-width becomes strokeWidth in React */}
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div className="text">Efficiency Unlocked, Growth<br />Delivered.</div>
+            </div>
+            <div className="item">
+              <div className="icon-box icon3" aria-hidden="true">
+                <svg className="icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M18 8v6a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="17" y2="7"></line>
+                </svg>
+              </div>
+              <div className="text">Transforming Challenges into<br />Opportunities.</div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
 <section>

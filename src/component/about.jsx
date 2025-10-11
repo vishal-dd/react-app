@@ -40,8 +40,8 @@ export function About() {
                 </button>
               </div>
 
-              <div className="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
-                <FaStar className="text-warning" />
+              <div className="d-flex align-items-center justify-content-center justify-content-md-start  gap-2">
+                <FaStar className="fastar" />
                 <small className="text-muted">Rated 4.9 out of 1200 reviews</small>
               </div>
             </div>
@@ -70,8 +70,6 @@ export function About() {
                   className="img-fluid rounded shadow-sm"
                 />
               </div>
-
-             
             </div>
         </div>
       </section>

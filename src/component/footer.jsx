@@ -4,6 +4,10 @@ import { FaInstagram, FaPinterest, FaEllipsisH } from 'react-icons/fa';
 
 export function Footer() {
   return (
+    <>
+     <div>
+                <img src="../assets/img.png" alt="" />
+       </div>
     <footer className="bg-white border-top mt-5 pt-4 pb-2">
       <div className="container">
 
@@ -40,5 +44,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }
